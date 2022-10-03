@@ -26,10 +26,9 @@ function ALERTNUM (){
      alert(num1)
 }
 
-const slider = document.querySelector('.slider');
+const slider = document.querySelector('.range-input');
 const progress = document.querySelector('.progress');
 
 slider.oninput = function(){
-     progress.style.width = `${slider.value}%`
-     
+     progress.style.width = `${slider.value/5}%`
 };

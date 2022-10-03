@@ -14,11 +14,6 @@ body {
   margin: 0;
 }
 
-h2 {
-  position: absolute;
-  top: 10px;
-}
-
 .range-container {
   position: relative;
 }
@@ -27,6 +22,11 @@ input[type=range] {
   width: 300px;
   margin: 18px 0;
   -webkit-appearance: none;
+  transition: opacity 0.2s;
+}
+
+input[type=range]:hover {
+  opacity: 1;
 }
 
 input[type=range]:focus {
@@ -42,7 +42,10 @@ input[type=range] + label {
   padding: 5px 0;
   text-align: center;
   border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /* Chrome & Safari */
@@ -63,14 +66,16 @@ input[type=range]::-webkit-slider-thumb {
   border: 8px solid #f49a42;
   margin-top: -10px;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 /* Firefox */
 input[type=range]::-moz-range-track {
-  background: purple;
+  background: #d8e0f3;
   border-radius: 4px;
   width: 100%;
-  height: 14px;
+  height: 4px;
   cursor: pointer;
 }
 
@@ -80,17 +85,19 @@ input[type=range]::-moz-range-thumb {
   width: 24px;
   background: #fff;
   border-radius: 50%;
-  border: 1px solid purple;
-  margin-top: -7px;
+  border: 8px solid #f49a42;
+  margin-top: -10px;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 /* IE */
 input[type=range]::-ms-track {
-  background: purple;
+  background: #d8e0f3;
   border-radius: 4px;
   width: 100%;
-  height: 14px;
+  height: 4px;
   cursor: pointer;
 }
 
@@ -100,15 +107,16 @@ input[type=range]::-ms-thumb {
   width: 24px;
   background: #fff;
   border-radius: 50%;
-  border: 1px solid purple;
-  margin-top: -7px;
+  border: 8px solid #f49a42;
+  margin-top: -10px;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 .wrapper {
   width: 190px;
   position: relative;
-  z-index: 5;
 }
 .wrapper input {
   width: 100%;
@@ -143,9 +151,20 @@ input[type=range]::-ms-thumb {
 .progress {
   position: absolute;
   content: "";
-  width: 45%;
+  width: 50%;
   height: 4px;
   background-color: #f49a42;
-  top: calc(50% - 1.5px);
+  top: calc(50% - 2px);
   z-index: 1;
+  max-width: 100%;
+}
+
+.range-wrapper span {
+  position: relative;
+  top: -5%;
+}
+
+.range-wrapper {
+  display: flex;
+  flex-direction: row;
 }
