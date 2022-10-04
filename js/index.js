@@ -71,7 +71,11 @@ document.querySelector("#implementation").value =
 
 document.querySelector(".number-input").addEventListener("change", function () {
   document.querySelector("#implementation").value =
-    (document.querySelector(".number-input").value - 1) * 20 + 219 + " €";
+    (document.querySelector(".number-input").value - 1) * 20 + 219;
+
+  document.querySelector("#roi").value =
+    document.querySelector("#implementation").value /
+    document.querySelector("#saving").value;
 });
 
 document.querySelector("#implementation").value = implVAL;
