@@ -1,23 +1,77 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@charset "UTF-8";
+/*Обнуление*/
 * {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Lato", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
+:focus, :active {
+  outline: none;
 }
 
-.range-container {
-  position: relative;
+a:focus, a:active {
+  outline: none;
 }
 
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
 input[type=range] {
   width: 300px;
   margin: 18px 0;
@@ -114,38 +168,8 @@ input[type=range]::-ms-thumb {
   z-index: 10;
 }
 
-.wrapper {
-  width: 190px;
+.range-container {
   position: relative;
-}
-.wrapper input {
-  width: 100%;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 4px;
-  /*     background: #1B2FB2; */
-  outline: none;
-  transition: opacity 0.2s;
-  margin: 12px 0px 5px 0px;
-  cursor: pointer;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-          appearance: none;
-  width: 11px;
-  height: 11px;
-  border-radius: 100%;
-  background: #f49a42;
-  position: relative;
-  z-index: 999;
 }
 
 .progress {
@@ -167,4 +191,12 @@ input[type=range]::-ms-thumb {
 .range-wrapper {
   display: flex;
   flex-direction: row;
+  margin: 50px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Metropolis", sans-serif;
 }

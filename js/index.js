@@ -1,10 +1,18 @@
 const range = document.getElementById("range");
 
+const slider = [ document.querySelector('.number-input'), document.querySelector('.cost-input'),
+     document.querySelector('.saving-input')
+];
+
+const progress = [ document.querySelector('.number-progress'), document.querySelector('.cost-progress'),
+     document.querySelector('.saving-progress')
+];
+
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
 
-range.addEventListener("input", (e) => {
+slider.forEach(element => element.addEventListener("input", (e) => {
      const value = +e.target.value;
      const label = e.target.nextElementSibling;
      const rangeWidth = getComputedStyle(e.target).getPropertyValue("width");
@@ -19,16 +27,24 @@ range.addEventListener("input", (e) => {
           scale(value, min, max, 10, -10);
      label.style.left = `${left}px`;
      label.innerHTML = value;
-});
+}));
+
+
+slider[0].oninput = function(){
+     progress[0].style.width = `${slider[0].value/5}%`
+};
+
+slider[1].oninput = function(){
+     progress[1].style.width = `${slider[1].value/100}%`
+};
+
+slider[2].oninput = function(){
+     progress[2].style.width = `${slider[2].value*1.58}%`
+};
+
 
 function ALERTNUM (){
-     const num1 = document.querySelector("#range").value
+     const num1 = [document.querySelector(".number-input").value, document.querySelector(".cost-input").value, 
+     document.querySelector('.saving-input').value]
      alert(num1)
 }
-
-const slider = document.querySelector('.range-input');
-const progress = document.querySelector('.progress');
-
-slider.oninput = function(){
-     progress.style.width = `${slider.value/5}%`
-};
