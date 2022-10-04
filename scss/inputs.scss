@@ -21,6 +21,11 @@ input[type="range"]:focus {
      outline: none;
 }
 
+input[type="range"]:disabled{
+     color: #000000;
+}
+
+
 input[type="range"] + label {
      background-color: #ffffff;
      position: absolute;
