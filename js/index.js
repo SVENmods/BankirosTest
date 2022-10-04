@@ -67,11 +67,7 @@ function ALERTNUM() {
 
 // console.log(implementation);
 document.querySelector("#implementation").value =
-  document.querySelector("#implementation").value + "€";
-
-document.querySelector(".number-input").value;
-
-const implVAL = (document.querySelector(".number-input").value - 1) * 20 + 219;
+  document.querySelector("#implementation").value + " €";
 
 document.querySelector(".number-input").addEventListener("change", function () {
   document.querySelector("#implementation").value =

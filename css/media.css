@@ -1,0 +1,12 @@
+@media only screen and (max-width: 480px) {
+  .ranges-layer {
+    flex-direction: column;
+  }
+  .range-wrapper:nth-child(2) {
+    margin: 0px 0px;
+  }
+  .send-result {
+    max-width: 80%;
+    width: 100%;
+  }
+}
