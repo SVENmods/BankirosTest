@@ -1,7 +1,13 @@
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+
 input[type="range"] {
-     max-width: 300px;
      width: 100%;
-     min-width: 250px;
      margin: 18px 0;
      -webkit-appearance: none;
      transition: opacity .2s;
@@ -16,16 +22,17 @@ input[type="range"]:focus {
 }
 
 input[type="range"] + label {
-     background-color: #fff;
+     background-color: #ffffff;
      position: absolute;
-     top: -25px;
+     top: -15px;
      left: calc(50% - 35px);
-     width: 80px;
-     padding: 5px 0;
+     width: 60px;
+     padding: 0px 0;
      text-align: center;
      border-radius: 4px;
      user-select: none;
-     outline: 1px solid red;
+     @include adaptiv-font(12, 8);
+     z-index: 999;
 }
 
    /* Chrome & Safari */
@@ -39,12 +46,12 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 input[type="range"]::-webkit-slider-thumb {
      -webkit-appearance: none;
-     height: 24px;
-     width: 24px;
+     height: 22px;
+     width: 22px;
      background: #fff;
      border-radius: 50%;
-     border: 8px solid #f49a42;
-     margin-top: -10px;
+     border: 8.5px solid #f49a42;
+     margin-top: -8px;
      cursor: pointer;
      position: relative;
      z-index: 10;

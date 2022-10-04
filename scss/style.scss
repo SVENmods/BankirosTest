@@ -1,11 +1,24 @@
 @import 'nullset.scss';
 @import 'inputs.scss';
 
-.range-input {
-  position: relative;
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Satoshi', sans-serif;
 }
 
-//color path
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+.range-input {
+  position: relative;
+  width: 100%;
+}
 
 .progress{
   position: absolute;
@@ -18,50 +31,94 @@
   max-width: 100%;
 }
 
-.range-container span{
-  position: relative;
-  top: -5%;
-}
-
 .range-container{
   display: flex;
   flex-direction: row;
-  margin: 50px;
+  margin: 50px 0px;
+  width: 100%;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Metropolis', sans-serif;
+
+.range-container span{
+  position: relative;
+  top: -15px;
+  width: 0px;
+  height: 20px;
+  user-select: none;
+  @include adaptiv-font(11, 6);
+}
+
+.range-container span:nth-child(1){
+  text-align: left;
+}
+
+.range-container span:nth-child(3){
+  text-align: right;
+}
+
+.range-wrapper:nth-child(1) .range-container span:nth-child(3){
+  left: -9%;
+}
+
+.range-wrapper:nth-child(2) .range-container span:nth-child(3){
+  left: -15%;
+}
+
+.range-wrapper:nth-child(3) .range-container span:nth-child(3){
+  left: -6%;
+}
+
+.range-wrapper:nth-child(2){
+  margin: 0px 30px;
 }
 
 .ranges-layer{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .range-wrapper{
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  justify-content: center;
+  .range-title{
+    @include adaptiv-font(16, 10);
+    text-align: center;
+  }
 }
+
 
 .calc-container{
   display: flex;
   flex-direction: column;
-
+  max-width: 950px;
+  width: 100%;
+  justify-content: center;
+  -webkit-box-shadow: 0px 0px 30px 8px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 30px 8px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 30px 8px rgba(34, 60, 80, 0.2);
+  padding: 40px 30px 10px 30px;
+  border-radius: 15px;
+  margin: 30px 30px;
+  justify-content: center;
+  align-items: center;
   .result-layer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    *{}
+    width: 100%;
       &__cost-save{
         display: flex;
         flex-direction: row;
         width: 100%;
+        .result-container:nth-child(1){
+          margin-right: 20px;
+        }
       }
       &__roi{
         width: 100%;
@@ -72,9 +129,62 @@ body{
         align-items: center;
         flex-direction: column;
         width: 100%;
-        .span-result{
+        background: #f8f8f8;
+        margin: 10px 0px;
+        padding: 10px 10px 30px 10px;
+        @include adaptiv-font(15, 8);
+        border-radius: 5px;
+        .input-result{
+          background: #ffffff;
+          display: flex;
           border: 1px solid #f49a42;
+          margin-top: 11px;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 10px;
+          @include adaptiv-font(15, 8);
         }
       }
+  }
+}
+
+.send-result{
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  width: 100%;
+  background: #ffecd9;
+  padding: 5px 10px 30px 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  ::placeholder{
+    color: #c2bfbd;
+  }
+  p{
+    max-width: 80%;
+    @include adaptiv-font(14, 7);
+    line-height: 18px;
+    span{
+      color: #ff0000;
+    }
+  }
+  input[type='email']{
+    width: 100%;
+    padding: 5px 0px 3px 7px;
+    height: 4vh;
+    margin: 10px 0px 15px 0px;
+  }
+  .send-button{
+    @include adaptiv-font(12, 7);
+    background: #f49a42;
+    width: 30%;
+    height: 3.5vh;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 25px;
   }
 }

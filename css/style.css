@@ -73,9 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 input[type=range] {
-  max-width: 300px;
   width: 100%;
-  min-width: 250px;
   margin: 18px 0;
   -webkit-appearance: none;
   transition: opacity 0.2s;
@@ -90,19 +88,20 @@ input[type=range]:focus {
 }
 
 input[type=range] + label {
-  background-color: #fff;
+  background-color: #ffffff;
   position: absolute;
-  top: -25px;
+  top: -15px;
   left: calc(50% - 35px);
-  width: 80px;
-  padding: 5px 0;
+  width: 60px;
+  padding: 0px 0;
   text-align: center;
   border-radius: 4px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  outline: 1px solid red;
+  font-size: calc(8px + 4 * ((100vw - 320px) / 1120));
+  z-index: 999;
 }
 
 /* Chrome & Safari */
@@ -116,12 +115,12 @@ input[type=range]::-webkit-slider-runnable-track {
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
   background: #fff;
   border-radius: 50%;
-  border: 8px solid #f49a42;
-  margin-top: -10px;
+  border: 8.5px solid #f49a42;
+  margin-top: -8px;
   cursor: pointer;
   position: relative;
   z-index: 10;
@@ -171,8 +170,16 @@ input[type=range]::-ms-thumb {
   z-index: 10;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Satoshi", sans-serif;
+}
+
 .range-input {
   position: relative;
+  width: 100%;
 }
 
 .progress {
@@ -186,50 +193,95 @@ input[type=range]::-ms-thumb {
   max-width: 100%;
 }
 
-.range-container span {
-  position: relative;
-  top: -5%;
-}
-
 .range-container {
   display: flex;
   flex-direction: row;
-  margin: 50px;
+  margin: 50px 0px;
+  width: 100%;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Metropolis", sans-serif;
+.range-container span {
+  position: relative;
+  top: -15px;
+  width: 0px;
+  height: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: calc(6px + 5 * ((100vw - 320px) / 1120));
+}
+
+.range-container span:nth-child(1) {
+  text-align: left;
+}
+
+.range-container span:nth-child(3) {
+  text-align: right;
+}
+
+.range-wrapper:nth-child(1) .range-container span:nth-child(3) {
+  left: -9%;
+}
+
+.range-wrapper:nth-child(2) .range-container span:nth-child(3) {
+  left: -15%;
+}
+
+.range-wrapper:nth-child(3) .range-container span:nth-child(3) {
+  left: -6%;
+}
+
+.range-wrapper:nth-child(2) {
+  margin: 0px 30px;
 }
 
 .ranges-layer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .range-wrapper {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+.range-wrapper .range-title {
+  font-size: calc(10px + 6 * ((100vw - 320px) / 1120));
+  text-align: center;
 }
 
 .calc-container {
   display: flex;
   flex-direction: column;
+  max-width: 950px;
+  width: 100%;
+  justify-content: center;
+  box-shadow: 0px 0px 30px 8px rgba(34, 60, 80, 0.2);
+  padding: 40px 30px 10px 30px;
+  border-radius: 15px;
+  margin: 30px 30px;
+  justify-content: center;
+  align-items: center;
 }
 .calc-container .result-layer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
 }
 .calc-container .result-layer__cost-save {
   display: flex;
   flex-direction: row;
   width: 100%;
+}
+.calc-container .result-layer__cost-save .result-container:nth-child(1) {
+  margin-right: 20px;
 }
 .calc-container .result-layer__roi {
   width: 100%;
@@ -240,7 +292,66 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  background: #f8f8f8;
+  margin: 10px 0px;
+  padding: 10px 10px 30px 10px;
+  font-size: calc(8px + 7 * ((100vw - 320px) / 1120));
+  border-radius: 5px;
 }
-.calc-container .result-layer .result-container .span-result {
+.calc-container .result-layer .result-container .input-result {
+  background: #ffffff;
+  display: flex;
   border: 1px solid #f49a42;
+  margin-top: 11px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-size: calc(8px + 7 * ((100vw - 320px) / 1120));
+}
+
+.send-result {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  width: 100%;
+  background: #ffecd9;
+  padding: 5px 10px 30px 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+}
+.send-result ::-moz-placeholder {
+  color: #c2bfbd;
+}
+.send-result :-ms-input-placeholder {
+  color: #c2bfbd;
+}
+.send-result ::placeholder {
+  color: #c2bfbd;
+}
+.send-result p {
+  max-width: 80%;
+  font-size: calc(7px + 7 * ((100vw - 320px) / 1120));
+  line-height: 18px;
+}
+.send-result p span {
+  color: #ff0000;
+}
+.send-result input[type=email] {
+  width: 100%;
+  padding: 5px 0px 3px 7px;
+  height: 4vh;
+  margin: 10px 0px 15px 0px;
+}
+.send-result .send-button {
+  font-size: calc(7px + 5 * ((100vw - 320px) / 1120));
+  background: #f49a42;
+  width: 30%;
+  height: 3.5vh;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 25px;
 }
