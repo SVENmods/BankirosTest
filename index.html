@@ -5,6 +5,7 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" type="text/css" href="css/style.css">
+     <link rel="stylesheet" type="text/css" href="css/inputs.css">
      <link href="http://fonts.cdnfonts.com/css/metropolis-4" rel="stylesheet">
      <title>BankirosTest</title>
 </head>
@@ -12,35 +13,62 @@
      <div class="calc-container">
           <div class="ranges-layer">
                <div class="range-wrapper">
-                    <span>0</span>
+                    <span class="range-title">Number of units</span>
                     <div class="range-container">
-                         <input type="range" name="range" id="range" min="0" max="500" class="range-input number-input"/>
-                         <label for="range">250</label>
-                         <div class="progress number-progress"></div>
+                         <span>0</span>
+                         <div class="range-input">
+                              <input type="range" name="range" id="range" min="0" max="500" class="number-input"/>
+                              <label for="range">250</label>
+                              <div class="progress number-progress"></div>
+                         </div>
+                         <span>500</span>
                     </div>
-                    <span>500</span>
                </div>
                <div class="range-wrapper">
-                    <span>500</span>
+                    <span class="range-title">Cost per unit per year</span>
                     <div class="range-container">
-                         <input type="range" name="range" id="range" min="500" max="10000" class="range-input cost-input"/>
-                         <label for="range">5000</label>
-                         <div class="progress cost-progress"></div>
+                         <span>500</span>
+                         <div class="range-input">
+                              <input type="range" name="range" id="range" min="500" max="10000" class="cost-input"/>
+                              <label for="range">5000</label>
+                              <div class="progress cost-progress"></div>
+                         </div>
+                         <span>10,000</span>
                     </div>
-                    <span>10,000</span>
                </div>
                <div class="range-wrapper">
-                    <span>5</span>
+                    <span class="range-title">Saving per unit</span>
                     <div class="range-container">
-                         <input type="range" name="range" id="range" min="5" max="60" class="range-input saving-input"/>
-                         <label for="range">30</label>
-                         <div class="progress saving-progress"></div>
+                         <span>5</span>
+                         <div class="range-input">
+                              <input type="range" name="range" id="range" min="5" max="60" class="saving-input"/>
+                              <label for="range">30</label>
+                              <div class="progress saving-progress"></div>
+                         </div>
+                         <span>60</span>
                     </div>
-                    <span>60</span>
+               </div>
+          </div>
+          <div class="result-layer">
+               <div class="result-layer__cost-save">
+                    <div class="result-container">
+                         <span>Implementation costs</span>
+                         <span class="span-result">0000</span>
+                    </div>
+                    <div class="result-container">
+                         <span>Mounthly saving</span>
+                         <span class="span-result">0000</span>
+                    </div>
+               </div>
+               <div class="result-layer__roi">
+                    <div class="result-container">
+                         <span>Saving per unit</span>
+                         <span class="span-result">0000</span>
+                    </div>
                </div>
           </div>
      </div>
-     <button onclick="ALERTNUM()">value</button>
+     <!-- <button onclick="ALERTNUM()">value</button> -->
 <script src="../js/index.js"></script>
 </body>
 </html>

@@ -73,7 +73,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 input[type=range] {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
+  min-width: 250px;
   margin: 18px 0;
   -webkit-appearance: none;
   transition: opacity 0.2s;
@@ -91,7 +93,7 @@ input[type=range] + label {
   background-color: #fff;
   position: absolute;
   top: -25px;
-  left: 110px;
+  left: calc(50% - 35px);
   width: 80px;
   padding: 5px 0;
   text-align: center;
@@ -100,6 +102,7 @@ input[type=range] + label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  outline: 1px solid red;
 }
 
 /* Chrome & Safari */
@@ -168,7 +171,7 @@ input[type=range]::-ms-thumb {
   z-index: 10;
 }
 
-.range-container {
+.range-input {
   position: relative;
 }
 
@@ -183,12 +186,12 @@ input[type=range]::-ms-thumb {
   max-width: 100%;
 }
 
-.range-wrapper span {
+.range-container span {
   position: relative;
   top: -5%;
 }
 
-.range-wrapper {
+.range-container {
   display: flex;
   flex-direction: row;
   margin: 50px;
@@ -199,4 +202,45 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Metropolis", sans-serif;
+}
+
+.ranges-layer {
+  display: flex;
+  flex-direction: row;
+}
+
+.range-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-container {
+  display: flex;
+  flex-direction: column;
+}
+.calc-container .result-layer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.calc-container .result-layer__cost-save {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.calc-container .result-layer__roi {
+  width: 100%;
+}
+.calc-container .result-layer .result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.calc-container .result-layer .result-container .span-result {
+  border: 1px solid #f49a42;
 }
