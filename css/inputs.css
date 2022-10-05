@@ -21,7 +21,7 @@ input[type=range] + label {
   background-color: #ffffff;
   position: absolute;
   top: -15px;
-  left: calc(50% - 1.823vw);
+  left: calc(50% - 1.523vw);
   width: 60px;
   padding: 0px 0;
   text-align: center;
