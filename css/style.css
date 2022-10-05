@@ -95,7 +95,7 @@ input[type=range] + label {
   background-color: #ffffff;
   position: absolute;
   top: -15px;
-  left: calc(50% - 1.223vw);
+  left: calc(50% - 1.523vw);
   width: 60px;
   padding: 0px 0;
   text-align: center;
@@ -214,7 +214,7 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-size: calc(10px + 1 * ((100vw - 320px) / 1120));
+  font-size: calc(8px + 3 * ((100vw - 320px) / 1120));
 }
 
 .range-container span:nth-child(1) {

@@ -46,7 +46,7 @@ $maxWidth: 1440;
   width: 0px;
   height: 20px;
   user-select: none;
-  @include adaptiv-font(11, 10);
+  @include adaptiv-font(11, 8);
 }
 
 .range-container span:nth-child(1){
