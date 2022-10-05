@@ -30,13 +30,13 @@ input[type="range"] + label {
      background-color: #ffffff;
      position: absolute;
      top: -15px;
-     left: calc(50% - 35px);
+     left: calc(50% - 1.823vw);
      width: 60px;
      padding: 0px 0;
      text-align: center;
      border-radius: 4px;
      user-select: none;
-     @include adaptiv-font(12, 8);
+     @include adaptiv-font(12, 11);
      z-index: 999;
 }
 

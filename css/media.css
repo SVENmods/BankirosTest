@@ -1,4 +1,4 @@
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   .ranges-layer {
     flex-direction: column;
   }
@@ -6,11 +6,26 @@
     margin: 0px 0px;
   }
   .send-result {
-    max-width: 80%;
+    max-width: 100%;
     width: 100%;
   }
   body {
-    padding-top: 165px;
+    padding-top: 0;
     padding-bottom: 10px;
+    height: 100vh;
+  }
+  .result-layer__cost-save {
+    flex-direction: column !important;
+  }
+  .calc-container {
+    margin-top: 70%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .calc-container {
+    margin-top: 0%;
+  }
+  body {
+    height: 180vh;
   }
 }
