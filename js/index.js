@@ -47,35 +47,56 @@ slider[2].oninput = function () {
   progress[2].style.width = `${slider[2].value * 1.58}%`;
 };
 
-function ALERTNUM() {
-  const num1 = [
-    document.querySelector(".number-input").value,
-    document.querySelector(".cost-input").value,
-    document.querySelector(".saving-input").value,
-  ];
-  alert(num1);
-}
-
-// const implementation = document.querySelector("#implementation").value;
-
-// document
-//   .querySelector(".number-input")
-//   .addEventListener("change", function () {
-//      document.querySelector("#implementation").value = 219;
-//     console.log(document.querySelector("#implementation").value);
-//   });
-
-// console.log(implementation);
-document.querySelector("#implementation").value =
-  document.querySelector("#implementation").value + " €";
-
 document.querySelector(".number-input").addEventListener("change", function () {
   document.querySelector("#implementation").value =
     (document.querySelector(".number-input").value - 1) * 20 + 219;
-
-  document.querySelector("#roi").value =
-    document.querySelector("#implementation").value /
-    document.querySelector("#saving").value;
 });
 
-document.querySelector("#implementation").value = implVAL;
+slider.forEach((element) =>
+  element.addEventListener("change", function () {
+    const impVal =
+      (document.querySelector(".number-input").value - 1) * 20 + 219;
+    document.querySelector("#implementation").value = impVal + " €";
+
+    const saveVal =
+      (slider[0].value * slider[1].value * slider[2].value) / 100 / 100;
+    document.querySelector("#saving").value = Math.round(saveVal) + " €";
+
+    const roiVal = impVal / saveVal;
+    if (saveVal < 1) {
+      document.querySelector("#roi").value = "Infinity";
+    } else document.querySelector("#roi").value = roiVal.toFixed(2);
+  })
+);
+
+const form = document.querySelector(".calc-container");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  form.reset();
+  console.log(
+    "Form Submitted!",
+    "||",
+    "Implementation costs: ",
+    document.querySelector("#implementation").value,
+    "||",
+    "Mounthly saving: ",
+    document.querySelector("#saving").value,
+    "||",
+    "ROI in mounths: ",
+    document.querySelector("#roi").value,
+    "||",
+    "Number of units: ",
+    document.querySelector(".number-input").value,
+    "||",
+    "Cost per unit per year: ",
+    document.querySelector(".cost-input").value,
+    "||",
+    "Saving per unit: ",
+    document.querySelector(".saving-input").value
+  );
+});
+
+document.querySelector(".send-button").addEventListener("click", function () {
+  form.requestSubmit();
+});

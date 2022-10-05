@@ -180,6 +180,9 @@ $maxWidth: 1440;
     height: 4vh;
     margin: 10px 0px 15px 0px;
   }
+  input[type='email']:focus{
+    outline: 1px solid #f49a42;
+  }
   .send-button{
     @include adaptiv-font(12, 10);
     background: #f49a42;
@@ -190,3 +193,5 @@ $maxWidth: 1440;
     border-radius: 25px;
   }
 }
+
+

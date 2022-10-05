@@ -352,6 +352,9 @@ body {
   height: 4vh;
   margin: 10px 0px 15px 0px;
 }
+.send-result input[type=email]:focus {
+  outline: 1px solid #f49a42;
+}
 .send-result .send-button {
   font-size: calc(10px + 2 * ((100vw - 320px) / 1120));
   background: #f49a42;
