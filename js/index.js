@@ -51,7 +51,11 @@ slider[1].oninput = function () {
 };
 
 slider[2].oninput = function () {
-  progress[2].style.width = `${slider[2].value * 1.58}%`;
+  if (document.documentElement.clientWidth < 510) {
+    if (slider[2].value < 10) {
+      progress[2].style.width = `${slider[2].value * 1.1}%`;
+    } else progress[2].style.width = `${slider[2].value * 1.58}%`;
+  } else progress[2].style.width = `${slider[2].value * 1.58}%`;
 };
 
 document.querySelector(".number-input").addEventListener("change", function () {
@@ -73,8 +77,7 @@ slider.forEach((element) =>
     document.querySelector("#saving").value =
       String(Math.round(saveVal)).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, "$1,") +
       " €";
-
-    const roiVal = impVal / saveVal;
+    const roiVal = impVal / Math.round(saveVal);
     if (saveVal < 1) {
       document.querySelector("#roi").value = "Infinity";
     } else document.querySelector("#roi").value = roiVal.toFixed(2);

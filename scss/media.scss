@@ -28,6 +28,11 @@
      }
      .calc-container{
           margin-top: 20vh !important;
+          max-width: 100% !important;
+          width: 100% !important;
+     }
+     input[type="range"] + label {
+          width: 80px;
      }
 }
 
@@ -37,8 +42,6 @@
      }
      .calc-container{
           margin: 0vh !important;
-          max-width: 100% !important;
-          width: 100% !important;
      }
 }
 
