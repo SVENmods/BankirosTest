@@ -301,7 +301,7 @@ body {
   background: #f8f8f8;
   margin: 10px 0px;
   padding: 10px 10px 30px 10px;
-  font-size: calc(8px + 7 * ((100vw - 320px) / 1120));
+  font-size: calc(10px + 5 * ((100vw - 320px) / 1120));
   border-radius: 5px;
 }
 .calc-container .result-layer .result-container .input-result {
@@ -314,7 +314,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 10px;
-  font-size: calc(8px + 7 * ((100vw - 320px) / 1120));
+  font-size: calc(10px + 5 * ((100vw - 320px) / 1120));
 }
 
 .send-result {
@@ -340,7 +340,7 @@ body {
 }
 .send-result p {
   max-width: 80%;
-  font-size: calc(7px + 7 * ((100vw - 320px) / 1120));
+  font-size: calc(10px + 4 * ((100vw - 320px) / 1120));
   line-height: 18px;
 }
 .send-result p span {
@@ -353,7 +353,7 @@ body {
   margin: 10px 0px 15px 0px;
 }
 .send-result .send-button {
-  font-size: calc(7px + 5 * ((100vw - 320px) / 1120));
+  font-size: calc(10px + 2 * ((100vw - 320px) / 1120));
   background: #f49a42;
   width: 30%;
   height: 3.5vh;

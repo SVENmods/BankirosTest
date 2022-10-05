@@ -134,7 +134,7 @@ $maxWidth: 1440;
         background: #f8f8f8;
         margin: 10px 0px;
         padding: 10px 10px 30px 10px;
-        @include adaptiv-font(15, 8);
+        @include adaptiv-font(15, 10);
         border-radius: 5px;
         .input-result{
           background: #ffffff;
@@ -146,7 +146,7 @@ $maxWidth: 1440;
           align-items: center;
           text-align: center;
           padding: 10px;
-          @include adaptiv-font(15, 8);
+          @include adaptiv-font(15, 10);
         }
       }
   }
@@ -168,7 +168,7 @@ $maxWidth: 1440;
   }
   p{
     max-width: 80%;
-    @include adaptiv-font(14, 7);
+    @include adaptiv-font(14, 10);
     line-height: 18px;
     span{
       color: #ff0000;
@@ -181,7 +181,7 @@ $maxWidth: 1440;
     margin: 10px 0px 15px 0px;
   }
   .send-button{
-    @include adaptiv-font(12, 7);
+    @include adaptiv-font(12, 10);
     background: #f49a42;
     width: 30%;
     height: 3.5vh;
