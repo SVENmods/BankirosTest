@@ -43,11 +43,17 @@ document.querySelector(".cost-label").addEventListener("change", function () {
 });
 
 slider[0].oninput = function () {
-  progress[0].style.width = `${slider[0].value / 5}%`;
+  if (slider[0].value > 320) {
+    progress[0].style.width = `${slider[0].value / 5 - 6}%`;
+  } else if (slider[0].value > 160) {
+    progress[0].style.width = `${slider[0].value / 5 - 3}%`;
+  } else if (slider[0].value < 160) {
+    progress[0].style.width = `${slider[0].value / 5}%`;
+  }
 };
 
 slider[1].oninput = function () {
-  progress[1].style.width = `${slider[1].value / 100}%`;
+  progress[1].style.width = `${slider[1].value / 100 - 6}%`;
 };
 
 slider[2].oninput = function () {
@@ -55,7 +61,13 @@ slider[2].oninput = function () {
     if (slider[2].value < 10) {
       progress[2].style.width = `${slider[2].value * 1.1}%`;
     } else progress[2].style.width = `${slider[2].value * 1.58}%`;
-  } else progress[2].style.width = `${slider[2].value * 1.58}%`;
+  } else if (document.documentElement.clientWidth > 510) {
+    if (slider[2].value < 40) {
+      progress[2].style.width = `${slider[2].value * 1.45}%`;
+    } else {
+      progress[2].style.width = `${slider[2].value * 1.528}%`;
+    }
+  }
 };
 
 document.querySelector(".number-input").addEventListener("change", function () {

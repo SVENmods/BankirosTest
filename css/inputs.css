@@ -63,15 +63,15 @@ input[type=range]::-moz-range-track {
 
 input[type=range]::-moz-range-thumb {
   -webkit-appearance: none;
-  height: 22px;
-  width: 22px;
+  height: 7.5px;
+  width: 7.5px;
   background: #fff;
   border-radius: 50%;
   border: 8.5px solid #f49a42;
   margin-top: -8px;
   cursor: pointer;
   position: relative;
-  z-index: 10;
+  z-index: 9999999;
 }
 
 /* IE */
