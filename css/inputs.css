@@ -63,12 +63,12 @@ input[type=range]::-moz-range-track {
 
 input[type=range]::-moz-range-thumb {
   -webkit-appearance: none;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
   background: #fff;
   border-radius: 50%;
-  border: 8px solid #f49a42;
-  margin-top: -10px;
+  border: 8.5px solid #f49a42;
+  margin-top: -8px;
   cursor: pointer;
   position: relative;
   z-index: 10;
@@ -85,12 +85,12 @@ input[type=range]::-ms-track {
 
 input[type=range]::-ms-thumb {
   -webkit-appearance: none;
-  height: 24px;
-  width: 24px;
+  height: 22px;
+  width: 22px;
   background: #fff;
   border-radius: 50%;
-  border: 8px solid #f49a42;
-  margin-top: -10px;
+  border: 8.5px solid #f49a42;
+  margin-top: -8px;
   cursor: pointer;
   position: relative;
   z-index: 10;
