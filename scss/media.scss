@@ -33,16 +33,16 @@
 
 @media only screen and (max-width: 430px) {
      body{
-          height: 130vh;
+          height: 120vh !important;
      }
      .calc-container{
           margin-top: 0vh !important;
      }
 }
 
-@media only screen and (max-height: 340px) {
+@media only screen and (max-height: 730px) and (max-width: 500px) {
      body{
-          height: 290vh;
+          height: 150vh !important;
      }
 }
 
@@ -58,12 +58,18 @@
      }
 }
 
+@media only screen and (max-height: 340px) {
+     body{
+          height: 290vh !important;
+     }
+}
+
 @media only screen and (max-width: 340px) {
      .send-button{
           width: 50% !important;
           height: 5vh !important;
      }
      body {
-          height: 180vh;
+          height: 180vh !important;
      }
 }
