@@ -31,7 +31,9 @@
     height: 120vh !important;
   }
   .calc-container {
-    margin-top: 0vh !important;
+    margin: 0vh !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 }
 @media only screen and (max-height: 730px) and (max-width: 500px) {
@@ -40,14 +42,16 @@
   }
 }
 @media only screen and (max-width: 380px) {
-  .calc-container {
-    margin-top: 0vh !important;
-  }
   body {
     height: 170vh;
   }
   .send-button {
     width: 70%;
+  }
+}
+@media only screen and (max-width: 370px) and (max-height: 750px) {
+  body {
+    height: 140vh !important;
   }
 }
 @media only screen and (max-height: 340px) {
