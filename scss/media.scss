@@ -31,6 +31,15 @@
      }
 }
 
+@media only screen and (max-width: 430px) {
+     body{
+          height: 130vh;
+     }
+     .calc-container{
+          margin-top: 0vh !important;
+     }
+}
+
 @media only screen and (max-height: 340px) {
      body{
           height: 290vh;
