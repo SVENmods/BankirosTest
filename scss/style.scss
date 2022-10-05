@@ -147,6 +147,9 @@ $maxWidth: 1440;
           text-align: center;
           padding: 10px;
           @include adaptiv-font(15, 10);
+          input:disabled{
+            color: #000000 !important;
+          }
         }
       }
   }

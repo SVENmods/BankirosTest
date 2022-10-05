@@ -31,9 +31,16 @@ slider.forEach((element) =>
       numLabelWidth / 2 +
       scale(value, min, max, 10, -10);
     label.style.left = `${left}px`;
-    label.innerHTML = value;
+    label.innerHTML = String(value).replace(
+      /(\d)(?=(\d{3})+([^\d]|$))/g,
+      "$1,"
+    );
   })
 );
+
+document.querySelector(".cost-label").addEventListener("change", function () {
+  console.log(document.querySelector(".cost-label"));
+});
 
 slider[0].oninput = function () {
   progress[0].style.width = `${slider[0].value / 5}%`;
@@ -56,11 +63,16 @@ slider.forEach((element) =>
   element.addEventListener("change", function () {
     const impVal =
       (document.querySelector(".number-input").value - 1) * 20 + 219;
-    document.querySelector("#implementation").value = impVal + " €";
+    document.querySelector("#implementation").value =
+      String(impVal).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, "$1,") + " €";
 
     const saveVal =
-      (slider[0].value * slider[1].value * slider[2].value) / 100 / 100;
-    document.querySelector("#saving").value = Math.round(saveVal) + " €";
+      (((slider[0].value * slider[1].value * slider[2].value) / 100 / 100) *
+        94.69375) /
+      100;
+    document.querySelector("#saving").value =
+      String(Math.round(saveVal)).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, "$1,") +
+      " €";
 
     const roiVal = impVal / saveVal;
     if (saveVal < 1) {
