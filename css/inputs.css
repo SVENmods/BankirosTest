@@ -26,10 +26,6 @@ input[type=range] + label {
   padding: 0px 0;
   text-align: center;
   border-radius: 4px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   font-size: calc(11px + 1 * ((100vw - 320px) / 1120));
   z-index: 999;
 }

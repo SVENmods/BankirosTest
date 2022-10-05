@@ -35,7 +35,6 @@ input[type="range"] + label {
      padding: 0px 0;
      text-align: center;
      border-radius: 4px;
-     user-select: none;
      @include adaptiv-font(12, 11);
      z-index: 999;
 }
