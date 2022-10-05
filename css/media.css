@@ -31,12 +31,12 @@
     height: 290vh;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 380px) {
   .calc-container {
     margin-top: 0vh !important;
   }
   body {
-    height: 130vh;
+    height: 170vh;
   }
   .send-button {
     width: 70%;
