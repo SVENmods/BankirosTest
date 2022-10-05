@@ -1,7 +1,10 @@
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 900px) {
   .send-result {
     max-width: 100%;
     width: 100%;
+  }
+  .calc-container {
+    margin-top: 0vh !important;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -20,7 +23,12 @@
     flex-direction: column !important;
   }
   .calc-container {
-    margin-top: 200vh !important;
+    margin-top: 20vh !important;
+  }
+}
+@media only screen and (max-height: 340px) {
+  body {
+    height: 290vh;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -28,7 +36,7 @@
     margin-top: 0vh !important;
   }
   body {
-    height: 180vh;
+    height: 130vh;
   }
   .send-button {
     width: 70%;
@@ -38,5 +46,8 @@
   .send-button {
     width: 50% !important;
     height: 5vh !important;
+  }
+  body {
+    height: 180vh;
   }
 }
