@@ -339,7 +339,7 @@ body {
   color: #c2bfbd;
 }
 .send-result p {
-  max-width: 80%;
+  max-width: 70%;
   font-size: calc(10px + 4 * ((100vw - 320px) / 1120));
   line-height: 18px;
 }
